@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
       Hello World <br />
-      <a href="form">Form</a>
+      <NavLink to="form">Form</NavLink>
     </div>
   );
 };
