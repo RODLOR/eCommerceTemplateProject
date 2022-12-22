@@ -1,5 +1,4 @@
 import NotFound404 from '../assets/imgs/404.png'
-import { Link } from 'react-router-dom';
 
 const Err404 = () => {
   return (
