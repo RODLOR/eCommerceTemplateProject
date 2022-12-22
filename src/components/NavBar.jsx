@@ -1,9 +1,14 @@
-import pageLogo from "../assets/imgs/pageLogo.png";
+import logo from "../assets/imgs/logo.svg";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const NavBar = () => {
+  let [menu, setMenu] = useState(true);
+  const toggleMenu = () => {
+    setMenu(!menu);
+  }
   return (
-    <nav className="bg-gray-100">
+    <nav className="bg-gray-100 fixed w-screen">
       <div className="max-w-full mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-4">
@@ -12,8 +17,8 @@ const NavBar = () => {
                 to="/"
                 className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"
               >
-                <img className="h-6 w-6 mr-1" src={pageLogo} alt="" />
-                <span className="font-bold">theCommerce</span>
+                <img className="h-6 w-6 mr-1" src={logo} alt="" />
+                <span className="font-bold">Tech Commerce</span>
               </NavLink>
             </div>
             <div className="hidden md:flex items-center space-x-1">
@@ -43,7 +48,7 @@ const NavBar = () => {
             </NavLink>
           </div>
           <div className="md:hidden flex items-center">
-            <button className="mobile-menu-button">
+            <button onClick={toggleMenu} className="mobile-menu-button">
               <svg
                 className="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,12 +67,20 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="mobile-menu hidden md:hidden">
-        <NavLink to="#" className="block py-2 px-4 text-sm hover:bg-gray-200">
-          Features
+      <div className="mobile-menu md:hidden" hidden={menu}>
+        <NavLink
+          to="/products"
+          className="py-5 px-3 text-gray-700 hover:text-gray-900"
+          onClick={setMenu}
+        >
+          Products
         </NavLink>
-        <NavLink to="#" className="block py-2 px-4 text-sm hover:bg-gray-200">
-          Pricing
+        <NavLink
+          to="/deals"
+          className="py-5 px-3 text-gray-700 hover:text-gray-900"
+          onClick={setMenu}
+        >
+          Deals
         </NavLink>
       </div>
     </nav>
