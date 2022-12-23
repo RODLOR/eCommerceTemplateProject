@@ -93,7 +93,7 @@ const NavBar = () => {
       </div>
       <div
         className={
-          "mobile-menu bg-gray-200 border-gray-400 border-t pt-1 pb-1 " + menu
+          "mobile-menu bg-gray-200 border-gray-400 border-t pt-1 pb-1 w-full fixed z-10 " + menu
         }
       >
         <NavLink

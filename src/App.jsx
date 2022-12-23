@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import HomePage from "./pages/HomePage.jsx";
-import Form from "./pages/Form.jsx";
+import Smartphones from "./pages/Smartphones.jsx";
 import NavBar from './components/NavBar.jsx'
 import Err404 from "./pages/Err404";
 
@@ -11,7 +11,7 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/form" element={<Form/>}/>
+        <Route path="/smartphones" element={<Smartphones/>}/>
         <Route path="*" element={<Err404/>}/>
       </Routes>
     </BrowserRouter>

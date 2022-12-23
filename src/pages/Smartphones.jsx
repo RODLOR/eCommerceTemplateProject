@@ -1,6 +1,6 @@
-const Form = () => {
+const Smartphones = () => {
     return (
-        <form id="form" class="topBefore">
+        <form id="form" className="topBefore">
           <input id="name" type="text" placeholder="Escribe tu nombre"/>
           <input id="email" type="text" placeholder="Escribe tu e-mail"/>
           <input id="tel" type="tel" placeholder="Escribe tu teléfono (Opcional)"/>
@@ -10,4 +10,4 @@ const Form = () => {
     )
 }
 
-export default Form;
+export default Smartphones;
