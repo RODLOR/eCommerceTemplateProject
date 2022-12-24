@@ -7,6 +7,7 @@ import Err404 from "./pages/Err404";
 
 const App = () => {
   return (
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500">
     <BrowserRouter>
       <NavBar/>
       <Routes>
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="*" element={<Err404/>}/>
       </Routes>
     </BrowserRouter>
+    </div>
   );
 };
 
