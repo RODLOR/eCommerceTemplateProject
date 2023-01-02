@@ -11,7 +11,7 @@ const NavBar = () => {
     });
   };
   return (
-    <nav className="bg-gray-100 w-screen">
+    <nav className="bg-gray-100 w-full">
       <div className="max-w-full mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-4">

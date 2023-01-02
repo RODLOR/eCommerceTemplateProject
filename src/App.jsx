@@ -8,7 +8,7 @@ import DealsPage from "./pages/DealsPage";
 
 const App = () => {
   return (
-    <div className="bg-gradient-to-r from-purple-500 to-pink-500">
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 max-w-full">
       <BrowserRouter>
         <NavBar />
         <Routes>
