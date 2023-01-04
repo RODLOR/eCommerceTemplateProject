@@ -4,7 +4,7 @@ const SearchField = () => {
   };
   return (
     <form
-      className="max-w-xl w-11/12 py-10"
+      className="max-w-xl mx-1 pb-5"
       onSubmit={onClickButton}
     >
       <div className="relative w-full">
