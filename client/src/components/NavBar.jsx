@@ -1,18 +1,11 @@
 import logo from "../assets/imgs/logo.svg";
 import { NavLink } from "react-router-dom";
 import SearchField from "./SearchField";
-// import { useState } from "react";
 
 const NavBar = () => {
-  // let [menu, setMenu] = useState("md:hidden hidden");
 
-  // const toggleMenu = () => {
-  //   setMenu(() => {
-  //     return menu == "md:hidden hidden" ? "flex flex-col" : "md:hidden hidden";
-  //   });
-  // };
   return (
-    <nav className="bg-gray-100 flex flex-col w-full px-4 mx-auto">
+    <nav className="bg-gray-100 flex flex-col w-full px-4 mx-auto rounded-b-3xl">
       <div className="flex justify-between">
         <div className="flex space-x-4">
           <div id="logoContainer">
