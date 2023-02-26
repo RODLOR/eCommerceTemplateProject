@@ -8,15 +8,17 @@ import DealsPage from "./pages/DealsPage";
 
 const App = () => {
   return (
-    <div className="bg-gradient-to-r from-purple-500 to-pink-500 max-w-full">
+    <div className="bg-lime-500 ">
       <BrowserRouter>
         <NavBar />
+        <main className="pt-24 mt-2">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/smartphones" element={<Smartphones />} />
           <Route path="/deals" element={<DealsPage />} />
           <Route path="*" element={<Err404 />} />
         </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );

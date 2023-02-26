@@ -1,11 +1,29 @@
 import { NavLink } from "react-router-dom";
 
-const Product = ({to, img, off}) => {
+const Product = ({ to, img, off, title }) => {
   return (
-    <div className="flex flex-col items-center bg-red-100 p-3">
-      <NavLink to={`/products/${to}`} className="flex flex-col items-center text-center w-60 max-sm:w-1/4">
-        <img src={img} alt="LG logo" className="w-full mt-3 " />
-        <span className="font-bold text-red-900 text-lg bg-red-400 p-1 self-start">{off}%OFF</span>
+    <div className="flex flex-col pr-5 mb-12 text-start">
+      <NavLink to={`/products/${to}`} className="flex flex-col w-60">
+        <img src={img} alt={title} className="w-full" />
+        <div className="absolute w-60 text-right">
+        <span className="font-bold text-white text-md bg-red-400 p-1">
+          -{off}%
+        </span>
+        </div>
+        <div id="productInfo">
+          <span>{title}</span>
+          <div className="flex gap-1">
+            <span id="discontPrice" className="font-bold text-xl">
+              350$
+            </span>
+            <span
+              id="originalPrice"
+              className="text-md line-through text-gray-500 p-1"
+            >
+              400$
+            </span>
+          </div>
+        </div>
       </NavLink>
     </div>
   );

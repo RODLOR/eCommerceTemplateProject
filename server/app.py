@@ -1,49 +1,58 @@
-from config import config
+from config import config, conn
 from flask import Flask, jsonify
-import pymysql
 
 app = Flask(__name__)
-
-conn = pymysql.connect(
-    host='localhost',
-    user='root',
-    password='1234',
-    database='ecommerce_data'
-)
 
 
 @app.route('/')
 def index():
     try:
+        conn.connect()
         cursor = conn.cursor()
-        cursor.execute('select * from users')
-        data = []
-        data.append(cursor.fetchall())
+        cursor.execute('select * from products')
+        data = cursor.fetchall()
         conn.close()
-        return str(data)
+        res = [dict(zip([key[0] for key in cursor.description], row))
+               for row in data]
+        return jsonify(res)
     except Exception as ex:
+        conn.close()
         return 'error'
 
 
 @app.route('/sign-up')
-def sign_in():
+def sign_up():
     try:
+        conn.connect()
+
         cursor = conn.cursor()
-        return 'ok'
+        data = ''
+        res = jsonify()
+        conn.close()
+        res = [dict(zip([key[0] for key in cursor.description], row))
+               for row in data]
+        return res
     except Exception:
+        conn.close()
         return 'error'
 
 
 @app.route('/login')
 def log_in():
     try:
-        return 'ok'
-    except Exception:
+        cursor = conn.cursor()
+        cursor.execute('select * from products')
+        data = cursor.fetchall()
+        conn.close()
+        products = [dict(zip([key[0] for key in cursor.description], row))
+                    for row in data]
+        return jsonify(products)
+    except Exception as ex:
         return 'error'
 
 
 def not_found(err):
-    return 'error'
+    return 'error404'
 
 
 if __name__ == '__main__':

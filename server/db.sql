@@ -181,3 +181,16 @@ CREATE TABLE
         FOREIGN KEY (user_id) REFERENCES users (id),
         FOREIGN KEY (product_id) REFERENCES products (id)
     );
+
+INSERT INTO products (sku, name, description, product_status_id, regular_price, discount_price, quantity, taxable)
+VALUES 
+    ('TECH001', 'Apple iPhone 12 Pro Max', 'The ultimate iPhone with 5G speed and an A14 Bionic chip.', 1, 1099.99, 999.99, 50, true),
+    ('TECH002', 'Samsung Galaxy S21 Ultra', 'A powerful Android phone with a 6.8-inch display and 5G connectivity.', 1, 1199.99, 999.99, 75, true),
+    ('TECH003', 'Microsoft Surface Laptop 4', 'A sleek and powerful laptop with up to 19 hours of battery life.', 1, 1299.99, 1199.99, 25, true),
+    ('TECH004', 'Dell XPS 13 Laptop', 'A thin and light laptop with a 13.3-inch InfinityEdge display.', 1, 899.99, 799.99, 30, true),
+    ('TECH005', 'Apple iPad Pro 12.9-inch', 'A powerful tablet with the M1 chip and Liquid Retina XDR display.', 1, 1099.99, 999.99, 60, true),
+    ('TECH006', 'Sony WH-1000XM4 Wireless Headphones', 'Industry-leading noise canceling with Adaptive Sound Control and Alexa voice control.', 1, 349.99, 299.99, 100, true),
+    ('TECH007', 'GoPro HERO9 Black Action Camera', '5K video and 20MP photos with HyperSmooth 3.0 video stabilization.', 1, 449.99, 399.99, 20, true),
+    ('TECH008', 'Ring Video Doorbell Pro 2', 'Advanced security with 1080p HD video and 3D Motion Detection.', 1, 249.99, 199.99, 40, true),
+    ('TECH009', 'Logitech G Pro X Gaming Headset', 'Professional-grade gaming headset with Blue VO!CE microphone technology.', 1, 129.99, 99.99, 50, true),
+    ('TECH010', 'Razer Huntsman Elite Mechanical Gaming Keyboard', 'Opto-Mechanical Switches and customizable Chroma RGB lighting.', 1, 199.99, 149.99, 30, true);
