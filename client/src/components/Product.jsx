@@ -1,26 +1,37 @@
 import { NavLink } from "react-router-dom";
 
-const Product = ({ to, img, off, title }) => {
+const Product = ({ to, img, name, regular_price, discount, currency }) => {
+  const line =
+    discount != 0
+      ? "text-md line-through text-gray-500 p-1"
+      : "text-xl font-bold";
+  let discountNum = regular_price-(regular_price*discount);
+  const discountNumRound = Math.round(discountNum*100)/100;
+  discountNum = discountNumRound.toFixed(2)
+
   return (
-    <div className="flex flex-col pr-5 mb-12 text-start">
-      <NavLink to={`/products/${to}`} className="flex flex-col w-60">
-        <img src={img} alt={title} className="w-full" />
-        <div className="absolute w-60 text-right">
-        <span className="font-bold text-white text-md bg-red-400 p-1">
-          -{off}%
-        </span>
-        </div>
-        <div id="productInfo">
-          <span>{title}</span>
-          <div className="flex gap-1">
-            <span id="discontPrice" className="font-bold text-xl">
-              350$
+    <div className="flex flex-col px-2.5 mb-8 text-start">
+      <NavLink to={to} className="flex flex-col w-40 md:w-60">
+        <img src={img} alt={name} className="w-full" />
+        {discount != 0 ? (
+          <div className="absolute md:w-60 w-40 text-right">
+            <span className="font-bold text-white text-md bg-red-400 p-1">
+              -{discount * 100}%
             </span>
-            <span
-              id="originalPrice"
-              className="text-md line-through text-gray-500 p-1"
-            >
-              400$
+          </div>
+        ) : null}
+        <div id="productInfo">
+          <span>{name ? name : "Empty"}</span>
+          <div className="flex gap-1">
+            {discount != 0 ? (
+              <span id="discount" className="font-bold text-xl">
+                {discount != 0 ? discountNum : null}
+                {currency ? currency : "$"}
+              </span>
+            ) : null}
+            <span id="regular_price" className={line}>
+              {regular_price != 0 ? regular_price : "000"}
+              {currency ? currency : "$"}
             </span>
           </div>
         </div>

@@ -2,11 +2,26 @@ import logo from "../assets/imgs/logo.svg";
 import { NavLink } from "react-router-dom";
 import SearchField from "./SearchField";
 import LoginModal from "./LoginModal";
+import React, { useState, useEffect } from "react";
+import { bannerText } from "../globalDataHandler";
 
 const NavBar = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed z-50 inset-x-0 top-0 bg-white flex flex-col w-full mx-auto shadow-md">
-      <div className="flex justify-between text-center py-2 px-4">
+    <nav className="fixed z-50 inset-x-0 top-0 flex flex-col w-full mx-auto">
+      <div className="flex justify-between text-center py-2 px-4 bg-white">
         <div id="logoContainer" className="flex">
           <NavLink
             to="/"
@@ -18,7 +33,7 @@ const NavBar = () => {
         </div>
         <LoginModal />
       </div>
-      <div className="flex md:justify-between justify-center pb-2 px-4">
+      <div className="flex md:justify-between justify-center pb-2 px-4 shadow-sm bg-white">
         <div className="hidden md:flex gap-2 flex-nowrap">
           <button>
             <svg
@@ -92,6 +107,13 @@ const NavBar = () => {
         </div>
         <SearchField />
       </div>
+      {bannerText != ""? <div
+        className={`shadow-sm transition-all duration-300 ease-in-out -z-10 ${
+          scrollY > 0 ? "-translate-y-60" : "-translate-y-0 "
+        } text-center px-12 py-1 bg-red-400`}
+      >
+        <span className="text-lg font-medium text-white ">{bannerText}</span>
+      </div>: null}
     </nav>
   );
 };
