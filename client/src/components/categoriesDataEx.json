@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "name": "Electronics",
+      "parent_id": null,
+      "inserted_at": "2023-02-26T12:00:00.000Z",
+      "updated_at": "2023-02-26T12:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Smartphones",
+      "parent_id": 1,
+      "inserted_at": "2023-02-26T12:01:00.000Z",
+      "updated_at": "2023-02-26T12:01:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Laptops",
+      "parent_id": 1,
+      "inserted_at": "2023-02-26T12:02:00.000Z",
+      "updated_at": "2023-02-26T12:02:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Desktops",
+      "parent_id": 1,
+      "inserted_at": "2023-02-26T12:03:00.000Z",
+      "updated_at": "2023-02-26T12:03:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Home & Garden",
+      "parent_id": null,
+      "inserted_at": "2023-02-26T12:04:00.000Z",
+      "updated_at": "2023-02-26T12:04:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Kitchen & Dining",
+      "parent_id": 5,
+      "inserted_at": "2023-02-26T12:05:00.000Z",
+      "updated_at": "2023-02-26T12:05:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Bedding",
+      "parent_id": 5,
+      "inserted_at": "2023-02-26T12:06:00.000Z",
+      "updated_at": "2023-02-26T12:06:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Furniture",
+      "parent_id": 5,
+      "inserted_at": "2023-02-26T12:07:00.000Z",
+      "updated_at": "2023-02-26T12:07:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Tools",
+      "parent_id": null,
+      "inserted_at": "2023-02-26T12:08:00.000Z",
+      "updated_at": "2023-02-26T12:08:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Power Tools",
+      "parent_id": 9,
+      "inserted_at": "2023-02-26T12:09:00.000Z",
+      "updated_at": "2023-02-26T12:09:00.000Z"
+    }
+  ]  

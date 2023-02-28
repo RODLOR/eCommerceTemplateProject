@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
 import Deals from "../components/Deals.jsx";
 import Carrousel from "../components/Carrousel.jsx";
+import BannerText from "../components/BannerText.jsx";
+import CategoriesGrid from "../components/CategoriesGrid.jsx";
+
 const HomePage = () => {
   return (
     <div id="homePage" className="flex flex-col justify-center items-center">
+      <BannerText />
       <Carrousel />
       <div className="flex flex-col justify-center items-center bg-white w-full">
-        <Deals />
-        <Link to="/deals" className="font-medium">
+        <Deals limit={5} />
+        <Link to="/deals" className="font-medium p-4">
           <span className="text-lg p-4">View More</span>
         </Link>
+        <CategoriesGrid />
       </div>
     </div>
   );

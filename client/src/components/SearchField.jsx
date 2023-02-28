@@ -4,13 +4,13 @@ const SearchField = () => {
   };
   return (
     <form
-      className="max-w-xl self-center w-full"
+      className="max-w-xl self-center w-full px-2 pb-2 md:px-0"
       onSubmit={onClickButton}
     >
       <div className="relative w-full">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg
-            className="w-5 h-5 text-gray-500 dark:text-gray-400"
+            className="w-5 h-5 text-gray-400  hover:text-red-500"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@ const SearchField = () => {
         <input
           type="text"
           id="voice-search"
-          className="focus:ring-2 focus:ring-red-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
-          placeholder="Search..."
+          className="focus:ring-1 focus:ring-red-500 focus:outline-none w-full text-sm leading-6 text-gray-900 bg-gray-100 rounded-sm placeholder-gray-500 py-1 pl-10 ring-0 ring-slate-200 shadow-sm"
+          placeholder="Search..." 
           required
         />
         <button

@@ -19,17 +19,16 @@ const Carrousel = () => {
 
   useEffect(() => {
     const interval = setTimeout(() => {
-      nextImage()
+      nextImage();
     }, 5000);
-  
+
     return () => {
-      clearTimeout(interval)
-    }
-  }, [nextImage])
-  
+      clearTimeout(interval);
+    };
+  }, [nextImage]);
 
   return (
-    <div className="w-full md:h-96 h-32 md:px-12 md:py-0 px-0">
+    <div className="w-full md:h-96 h-32 md:px-12 px-0">
       {images.map((image, index) => (
         <img
           key={index}
@@ -75,6 +74,7 @@ const Carrousel = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                opacity="70%"
               >
                 <circle cx="12" cy="12" r="10"></circle>
               </svg>
