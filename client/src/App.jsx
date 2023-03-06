@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar.jsx";
 import Err404 from "./pages/Err404";
 import Deals from "./components/Deals";
 import Footer from "./components/Footer";
+import CategoriesGrid from "./components/CategoriesGrid";
 
 const App = () => {
   return (
@@ -15,11 +16,12 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/deals" element={<Deals />} />
+            <Route path="/categories" element={<CategoriesGrid />} />
             <Route path="*" element={<Err404 />} />
           </Routes>
         </div>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

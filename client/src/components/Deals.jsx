@@ -17,11 +17,11 @@ const Deals = ({ limit }) => {
 
   let index = -1;
   return (
-    <section className="flex flex-col py-4 w-full bg-white">
+    <section className="flex flex-col pt-4 w-full md:bg-white">
       <div className="flex pl-4">
         <h1 className="font-medium text-red-700 text-2xl">Today's Deals</h1>
       </div>
-      <div className="flex flex-wrap pt-4 px-1 md:px-6 justify-center">
+      <div className="flex flex-wrap pt-4 md:px-6 justify-start">
         {products.map((product) => {
           if (product.discount != 0) {
             limit != null ? index++ : null;

@@ -10,21 +10,20 @@ const Product = ({ to, img, name, regular_price, discount, currency }) => {
   discountNum = discountNumRound.toFixed(2);
 
   return (
-    <div className="flex flex-col px-2.5 mb-8 text-start transition-transform duration-300 hover:-translate-y-2">
-      <NavLink to={to} className="flex flex-col w-40 md:w-60">
-        <img
-          src={img}
-          alt={name}
-          className="w-full object-cover aspect-square"
-        />
+    <div className="w-1/2 md:w-1/5 flex flex-col text-start transition-transform duration-300 hover:-translate-y-2 md:p-0 p-1">
+      <NavLink
+        to={to}
+        className="flex flex-col mb-1 rounded-sm shadow-sm md:shadow-none md:p-1 bg-white"
+      >
+        <img src={img} alt={name} className="w-full object-cover" />
         {discount != 0 ? (
-          <div className="absolute md:w-60 w-40 text-right">
+          <div className="absolute">
             <span className="font-bold text-white text-md bg-red-400 p-1">
               -{discount * 100}%
             </span>
           </div>
         ) : null}
-        <div id="productInfo">
+        <div id="productInfo" className="p-2">
           <span>{name ? name : "Empty"}</span>
           <div className="flex gap-1">
             {discount != 0 ? (
